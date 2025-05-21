@@ -13,10 +13,26 @@ interface Props {
 
 // List of zones - this would be fetched from an API in a real application
 const ZONES = [
-  'Zone 1', 'Zone 2', 'Zone 3', 'Zone 4', 'Zone 5',
-  'Zone 6', 'Zone 7', 'Zone 8', 'Zone 9', 'Zone 10',
-  'Zone 11', 'Zone 12', 'Zone 13', 'Zone 14', 'Zone 15',
-  'Zone 16', 'Zone 17', 'Zone 18', 'Zone 19', 'Zone 20',
+  'AREEKODE 1',
+  'EDAVANNAPPARA 2',
+  'EDAKKARA 3',
+  'KALIKAVU 4',
+  'KARUVARAKUNDU 5',
+  'KIZHISSERY 6',
+  'KOLATHUR 7',
+  'KONDOTTY 8',
+  'MAKKARAPARAMBA 9',
+  'MALAPPURAM 10',
+  'MANJERI 11',
+  'MELATTUR 12',
+  'MONGAM 13',
+  'NILAMBUR 14',
+  'PANDIKKAD 15',
+  'PERINTHALMANNA 16',
+  'PULAMANTHOL 17',
+  'PULIKKAL 18',
+  'THAZHEKODE 19',
+  'WANDOOR 20',
 ];
 
 export default function EducationDetails({
