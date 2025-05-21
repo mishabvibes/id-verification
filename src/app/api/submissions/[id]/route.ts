@@ -1,8 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { dbConnect } from '@/lib/db';
 import SubmissionModel from '@/models/Submission';
+import HallTicketModel from '@/models/HallTicket';
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from '@/lib/auth';
+import { FormStatus } from '@/types';
 
 export async function GET(
   req: NextRequest,
@@ -64,6 +66,30 @@ export async function PUT(
         { error: 'Submission not found' }, 
         { status: 404 }
       );
+    }
+
+    // If the submission is being approved, automatically generate a hall ticket
+    if (body.status === FormStatus.APPROVED) {
+      // Check if hall ticket already exists
+      const existingHallTicket = await HallTicketModel.findOne({ submissionId: id });
+      
+      if (!existingHallTicket) {
+        // Create a new hall ticket
+        const hallTicket = new HallTicketModel({
+          submissionId: id,
+          uniqueId: submission.uniqueId,
+          programCode: submission.category,
+          centre: 'ANVARUL ISLAM ARABIC COLLAGE RAMAPURAM',
+          name: submission.personalDetails.name,
+          dateOfBirth: submission.personalDetails.dateOfBirth,
+          zone: submission.educationDetails.zone,
+          membershipId: submission.personalDetails.skssflMembershipId,
+          issuedAt: new Date(),
+          status: 'issued'
+        });
+        
+        await hallTicket.save();
+      }
     }
     
     return NextResponse.json({ 

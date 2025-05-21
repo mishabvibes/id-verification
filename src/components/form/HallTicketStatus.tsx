@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { FormStatus } from '@/types';
 import { toast } from 'react-hot-toast';
+import { useRouter } from 'next/navigation';
 
 interface Props {
   submissionId: string;
@@ -12,6 +13,7 @@ export default function HallTicketStatus({ submissionId }: Props) {
   const [status, setStatus] = useState<FormStatus | null>(null);
   const [hallTicketExists, setHallTicketExists] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const router = useRouter();
 
   useEffect(() => {
     const checkStatus = async () => {
@@ -27,7 +29,7 @@ export default function HallTicketStatus({ submissionId }: Props) {
           
           // If approved, check if hall ticket exists
           if (submissionData.status === FormStatus.APPROVED) {
-            const hallTicketResponse = await fetch(`/api/hall-tickets?uniqueId=${submissionId}`);
+            const hallTicketResponse = await fetch(`/api/hall-tickets?submissionId=${submissionId}`);
             
             if (hallTicketResponse.ok) {
               setHallTicketExists(true);
@@ -87,7 +89,7 @@ export default function HallTicketStatus({ submissionId }: Props) {
       case FormStatus.DRAFT:
         return {
           title: 'Draft',
-          description: 'Your application is in draft state and has not been submitted yet.',
+          description: 'Your application is in draft mode. Please complete and submit it for review.',
           color: 'text-gray-600',
           bgColor: 'bg-gray-100',
           icon: (
@@ -109,7 +111,7 @@ export default function HallTicketStatus({ submissionId }: Props) {
         };
       case FormStatus.SUBMITTED:
         return {
-          title: 'Submitted - Under Review',
+          title: 'Under Review',
           description: 'Your application has been submitted and is currently under review.',
           color: 'text-blue-600',
           bgColor: 'bg-blue-100',
@@ -125,7 +127,7 @@ export default function HallTicketStatus({ submissionId }: Props) {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
           ),
@@ -220,10 +222,10 @@ export default function HallTicketStatus({ submissionId }: Props) {
           {status === FormStatus.APPROVED && hallTicketExists && (
             <div className="mt-4">
               <button
-                onClick={() => window.location.href = `/check-hall-ticket?id=${submissionId}`}
+                onClick={() => router.push(`/check-hall-ticket?id=${submissionId}`)}
                 className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
               >
-                View Hall Ticket
+                Download Hall Ticket
               </button>
             </div>
           )}

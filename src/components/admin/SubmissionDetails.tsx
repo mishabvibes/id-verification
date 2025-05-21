@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import { Submission, FormStatus } from '@/types';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-hot-toast';
-import HallTicketGenerator from '@/components/admin/HallTicketGenerator';
 import HallTicketView from '@/components/admin/HallTicketView';
 
 interface Props {
@@ -18,25 +17,25 @@ export default function SubmissionDetails({ submission }: Props) {
   const [hallTicketExists, setHallTicketExists] = useState(false);
   const [isCheckingHallTicket, setIsCheckingHallTicket] = useState(true);
 
-  useEffect(() => {
-    const checkHallTicket = async () => {
-      try {
-        setIsCheckingHallTicket(true);
-        
-        const response = await fetch(`/api/hall-tickets?submissionId=${submission._id}`);
-        
-        if (response.ok) {
-          setHallTicketExists(true);
-        } else {
-          setHallTicketExists(false);
-        }
-      } catch (error) {
-        console.error('Error checking hall ticket:', error);
-      } finally {
-        setIsCheckingHallTicket(false);
+  const checkHallTicket = async () => {
+    try {
+      setIsCheckingHallTicket(true);
+      
+      const response = await fetch(`/api/hall-tickets?submissionId=${submission._id}`);
+      
+      if (response.ok) {
+        setHallTicketExists(true);
+      } else {
+        setHallTicketExists(false);
       }
-    };
-    
+    } catch (error) {
+      console.error('Error checking hall ticket:', error);
+    } finally {
+      setIsCheckingHallTicket(false);
+    }
+  };
+
+  useEffect(() => {
     if (submission._id) {
       checkHallTicket();
     }
@@ -63,6 +62,13 @@ export default function SubmissionDetails({ submission }: Props) {
       }
       
       toast.success('Status updated successfully');
+      
+      // If the status is being changed to APPROVED, check for hall ticket after a short delay
+      if (updatedStatus === FormStatus.APPROVED) {
+        setTimeout(() => {
+          checkHallTicket();
+        }, 1000);
+      }
     } catch (error: any) {
       toast.error(error.message || 'Error updating status');
     } finally {
@@ -89,10 +95,6 @@ export default function SubmissionDetails({ submission }: Props) {
     } catch (error: any) {
       toast.error(error.message || 'Error deleting submission');
     }
-  };
-
-  const handleHallTicketGenerated = () => {
-    setHallTicketExists(true);
   };
 
   const getStatusBadgeClass = (status: FormStatus) => {
@@ -349,16 +351,7 @@ export default function SubmissionDetails({ submission }: Props) {
           <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
         </div>
       ) : (
-        <>
-          {submission.status === FormStatus.APPROVED && !hallTicketExists ? (
-            <HallTicketGenerator 
-              submission={submission} 
-              onGenerated={handleHallTicketGenerated} 
-            />
-          ) : (
-            hallTicketExists && <HallTicketView submissionId={submission._id!} />
-          )}
-        </>
+        hallTicketExists && <HallTicketView submissionId={submission._id!} />
       )}
     </div>
   );
