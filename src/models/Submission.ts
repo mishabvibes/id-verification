@@ -20,7 +20,7 @@ const EducationDetailsSchema = new Schema({
     district: { type: String, required: true },
     state: { type: String, required: true },
     zone: { type: String, required: true },
-    hallTicketDetails: { type: String, required: true },
+    // hallTicketDetails: { type: String, required: true },
     paymentProofUrl: { type: String, required: true },
 });
 

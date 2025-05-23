@@ -125,16 +125,18 @@ export default function FormPage() {
       
       {/* Page Header Banner */}
       <div className="bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-700 py-10">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-4">
-              Application Form
-            </h1>
-            <p className="text-blue-100 text-lg max-w-2xl mx-auto">
-              Complete your application for the entrance examination in just a few simple steps
-            </p>
-          </div>
-        </div>
+       <div className="container mx-auto px-4 py-8">
+  <div className="max-w-3xl mx-auto text-center space-y-4">
+    <h1 className="text-2xl sm:text-3xl font-bold text-white">
+      SKSSF TWALABA WING Entrance Exam Application Form
+    </h1>
+    <p className="text-blue-100 text-base max-w-xl mx-auto">
+      Fill out your application for the entrance exam in just a few easy steps.
+    </p>
+  </div>
+</div>
+
+
         {/* Wave Divider */}
         <div className="relative mt-10">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 100" fill="#ffffff">
