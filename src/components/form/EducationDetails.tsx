@@ -426,7 +426,7 @@ export default function EducationDetails({
                   </div>
                 </div>
                 <p className="text-xs text-center font-medium text-gray-600 mb-1">Scan to pay via Google Pay</p>
-                <p className="text-xs text-center text-gray-500 mb-2">UPI ID: entranceexam@okaxis</p>
+                <p className="text-xs text-center text-gray-500 mb-2">UPI ID: </p>
                 <div className="flex flex-col gap-2 w-full">
                   <a
                     href="/payment-qr-code.png"
@@ -442,7 +442,7 @@ export default function EducationDetails({
                     type="button"
                     onClick={() =>
                       window.open(
-                        "upi://pay?pa=anshid@oksbi&pn=Muhammed+Anshid&am=200&cu=INR&tn=ExamFee",
+                        "upi://pay?pa=anshidanshumanalpadam-1@oksbi&pn=Muhammed+Anshid&am=200&cu=INR&tn=ExamFee",
                         "_blank"
                       )
                     }
