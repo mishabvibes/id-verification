@@ -264,75 +264,75 @@ export default function EducationDetails({
         </div>
 
         <div className="bg-indigo-50 rounded-lg p-5 border border-indigo-100">
-  <h3 className="text-lg font-medium text-indigo-800 mb-3">Location Details</h3>
+          <h3 className="text-lg font-medium text-indigo-800 mb-3">Location Details</h3>
 
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-    {/* Zone */}
-    <div className="space-y-2">
-      <label htmlFor="zone" className="block text-sm font-medium text-gray-700">
-        Zone <span className="text-red-500">*</span>
-      </label>
-      <select
-        id="zone"
-        name="zone"
-        value={educationDetails.zone}
-        onChange={handleChange}
-        className={`w-full px-4 py-3 rounded-lg border transition-colors focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${errors.zone ? 'border-red-500 bg-red-50' : 'border-gray-300 hover:border-gray-400'
-          }`}
-      >
-        <option value="">Select Zone</option>
-        {ZONES.map((zone) => (
-          <option key={zone} value={zone}>
-            {zone}
-          </option>
-        ))}
-      </select>
-      {errors.zone && (
-        <p className="text-sm text-red-600">{errors.zone}</p>
-      )}
-    </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {/* Zone */}
+            <div className="space-y-2">
+              <label htmlFor="zone" className="block text-sm font-medium text-gray-700">
+                Zone <span className="text-red-500">*</span>
+              </label>
+              <select
+                id="zone"
+                name="zone"
+                value={educationDetails.zone}
+                onChange={handleChange}
+                className={`w-full px-4 py-3 rounded-lg border transition-colors focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${errors.zone ? 'border-red-500 bg-red-50' : 'border-gray-300 hover:border-gray-400'
+                  }`}
+              >
+                <option value="">Select Zone</option>
+                {ZONES.map((zone) => (
+                  <option key={zone} value={zone}>
+                    {zone}
+                  </option>
+                ))}
+              </select>
+              {errors.zone && (
+                <p className="text-sm text-red-600">{errors.zone}</p>
+              )}
+            </div>
 
-    {/* State */}
-    <div className="space-y-2">
-      <label htmlFor="state" className="block text-sm font-medium text-gray-700">
-        State <span className="text-red-500">*</span>
-      </label>
-      <input
-        id="state"
-        type="text"
-        name="state"
-        value={educationDetails.state}
-        onChange={handleChange}
-        className={`w-full px-4 py-3 rounded-lg border transition-colors focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${errors.state ? 'border-red-500 bg-red-50' : 'border-gray-300 hover:border-gray-400'
-          }`}
-        placeholder="Enter state"
-      />
-      {errors.state && (
-        <p className="text-sm text-red-600">{errors.state}</p>
-      )}
-    </div>
+            {/* State */}
+            <div className="space-y-2">
+              <label htmlFor="state" className="block text-sm font-medium text-gray-700">
+                State <span className="text-red-500">*</span>
+              </label>
+              <input
+                id="state"
+                type="text"
+                name="state"
+                value={educationDetails.state}
+                onChange={handleChange}
+                className={`w-full px-4 py-3 rounded-lg border transition-colors focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${errors.state ? 'border-red-500 bg-red-50' : 'border-gray-300 hover:border-gray-400'
+                  }`}
+                placeholder="Enter state"
+              />
+              {errors.state && (
+                <p className="text-sm text-red-600">{errors.state}</p>
+              )}
+            </div>
 
-    {/* District */}
-    <div className="space-y-2">
-      <label htmlFor="district" className="block text-sm font-medium text-gray-700">
-        District <span className="text-red-500">*</span>
-      </label>
-      <input
-        id="district"
-        type="text"
-        name="district"
-        value={educationDetails.district}
-        onChange={handleChange}
-        className={`w-full px-4 py-3 rounded-lg border transition-colors focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${errors.district ? 'border-red-500 bg-red-50' : 'border-gray-300 hover:border-gray-400'
-          }`}
-        placeholder="Enter district"
-      />
-      {errors.district && (
-        <p className="text-sm text-red-600">{errors.district}</p>
-      )}
-    </div>
-  </div>
-</div>
+            {/* District */}
+            <div className="space-y-2">
+              <label htmlFor="district" className="block text-sm font-medium text-gray-700">
+                District <span className="text-red-500">*</span>
+              </label>
+              <input
+                id="district"
+                type="text"
+                name="district"
+                value={educationDetails.district}
+                onChange={handleChange}
+                className={`w-full px-4 py-3 rounded-lg border transition-colors focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 ${errors.district ? 'border-red-500 bg-red-50' : 'border-gray-300 hover:border-gray-400'
+                  }`}
+                placeholder="Enter district"
+              />
+              {errors.district && (
+                <p className="text-sm text-red-600">{errors.district}</p>
+              )}
+            </div>
+          </div>
+        </div>
 
 
         {/* <div className="bg-gray-50 rounded-lg p-5 border border-gray-200">
@@ -440,7 +440,12 @@ export default function EducationDetails({
                   </a>
                   <button
                     type="button"
-                    onClick={() => window.open("upi://pay?pa=entranceexam@okaxis&pn=EntranceExam&am=200&cu=INR&tn=ExamFee", "_blank")}
+                    onClick={() =>
+                      window.open(
+                        "upi://pay?pa=anshid@oksbi&pn=Muhammed+Anshid&am=200&cu=INR&tn=ExamFee",
+                        "_blank"
+                      )
+                    }
                     className="inline-flex items-center justify-center px-3 py-1.5 bg-green-50 text-green-700 text-xs font-medium rounded hover:bg-green-100 transition-colors"
                   >
                     <svg className="w-3.5 h-3.5 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
