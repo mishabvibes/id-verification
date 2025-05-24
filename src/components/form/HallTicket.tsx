@@ -268,7 +268,7 @@ export default function HallTicket({ uniqueId }: Props) {
           <div className="px-8 py-6 border-b-2 border-black">
             <div className="text-center">
               <h1 className="text-2xl font-bold tracking-wider text-gray-900 uppercase">SKSSF TWALABA WING MALAPPURAM EAST</h1>
-              <div className="mt-5 inline-block border-2 border-black px-6 py-1.5">
+              <div className="mt-5">
                 <h2 className="text-xl font-bold tracking-wider text-gray-900 uppercase">ENTRANCE EXAMINATION HALL TICKET</h2>
               </div>
             </div>
@@ -332,7 +332,7 @@ export default function HallTicket({ uniqueId }: Props) {
               </div>
               
               <div className="col-span-1">
-                <div className="border-2 border-black w-full h-48 flex items-center justify-center bg-gray-50">
+                <div className="border-2 border-black w-3/4 h-48 flex items-center justify-center bg-gray-50">
                   {hallTicket?.photoUrl ? (
                     <img 
                       src={hallTicket.photoUrl} 
