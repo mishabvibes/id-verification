@@ -5,7 +5,7 @@ export default function Header() {
           <div className="flex justify-between h-16 items-center">
             <div className="flex items-center">
               <a href="/" className="flex items-center">
-                <span className="text-blue-600 text-xl font-bold">Entrance Exam Portal</span>
+                <span className="text-blue-600 text-md font-bold">Entrance Exam Portal</span>
               </a>
             </div>
             <div className="flex items-center space-x-4">
@@ -13,7 +13,7 @@ export default function Header() {
                 href="/check-hall-ticket"
                 className="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50"
               >
-                Check Hall Ticket
+              Hall Ticket
               </a>
               <a
                 href="/form"

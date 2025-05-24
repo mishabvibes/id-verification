@@ -374,7 +374,7 @@ export default function Home() {
                         We typically respond within 24 hours during business days
                       </p>
                       <a href="mailto:support@entranceexam.org" className="mt-4 inline-flex items-center text-blue-600 hover:text-blue-500 text-sm">
-                        support@entranceexam.org
+                      midlajkalikavu52@gmail.com
                         <svg className="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                           <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                         </svg>
@@ -399,7 +399,7 @@ export default function Home() {
                       </p>
                       
                       <a href="tel:+919876543210" className="mt-4 inline-flex items-center text-blue-600 hover:text-blue-500 text-sm">
-                        +91 9876 543 210
+                        +91 9605 589 642
                         <svg className="ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                           <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                         </svg>
@@ -437,7 +437,7 @@ export default function Home() {
                       </div>
                       <div>
                         <h4 className="text-lg font-medium text-white">Email</h4>
-                        <p className="mt-1 text-blue-100">support@entranceexam.org</p>
+                        <p className="mt-1 text-blue-100">midlajkalikavu52@gmail.com</p>
                       </div>
                     </div>
 
@@ -449,7 +449,7 @@ export default function Home() {
                       </div>
                       <div>
                         <h4 className="text-lg font-medium text-white">Phone</h4>
-                        <p className="mt-1 text-blue-100">+91 9876 543 210</p>
+                        <p className="mt-1 text-blue-100">+91 9605 589 642</p>
                       </div>
                     </div>
                   </div>

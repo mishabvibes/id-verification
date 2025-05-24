@@ -376,16 +376,16 @@ export default function EducationDetails({
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-600 mb-4">
                   <div>
-                    <span className="font-medium">Account Name:</span> Entrance Examination Portal
+                    <span className="font-medium">Account Name:</span> MUHAMMED ANSHID
                   </div>
                   <div>
-                    <span className="font-medium">Account Number:</span> 1234567890
+                    <span className="font-medium">Account Number:</span> 67224371735
                   </div>
                   <div>
-                    <span className="font-medium">IFSC Code:</span> ABCD0001234
+                    <span className="font-medium">IFSC Code:</span> SBIN0070710
                   </div>
                   <div>
-                    <span className="font-medium">Bank:</span> Sample Bank
+                    <span className="font-medium">Bank:</span> SBI
                   </div>
                 </div>
 
@@ -420,17 +420,15 @@ export default function EducationDetails({
                   {/* Replace this with your actual QR code image */}
                   <div className="w-32 h-32 bg-gray-200 flex items-center justify-center">
                     {/* This is a placeholder - in your real application, you'd use an image tag with your QR code */}
-                    <svg className="w-16 h-16 text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
-                    </svg>
+                    <img src="/qr-code.jpeg" alt="Payment QR Code" className="w-32 h-32" />
                   </div>
                 </div>
                 <p className="text-xs text-center font-medium text-gray-600 mb-1">Scan to pay via Google Pay</p>
-                <p className="text-xs text-center text-gray-500 mb-2">UPI ID: </p>
+                <p className="text-xs text-center text-gray-500 mb-2">UPI ID: anshidanshumanalpadam-1@oksbi</p>
                 <div className="flex flex-col gap-2 w-full">
                   <a
-                    href="/payment-qr-code.png"
-                    download="entrance-exam-payment-qr.png"
+                    href="/qr-code.jpeg"
+                    download="qr-code.jpeg"
                     className="inline-flex items-center justify-center px-3 py-1.5 bg-blue-50 text-blue-700 text-xs font-medium rounded hover:bg-blue-100 transition-colors"
                   >
                     <svg className="w-3.5 h-3.5 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -474,7 +472,7 @@ export default function EducationDetails({
               Payment Proof <span className="text-red-500">*</span>
             </label>
 
-            <div className="flex items-center space-x-4">
+            <div className="flex flex-col md:flex-row md:items-center md:space-x-4 space-y-4 md:space-y-0">
               <div className="flex-shrink-0">
                 {educationDetails.paymentProofUrl ? (
                   <div className="h-24 w-24 rounded-md overflow-hidden bg-gray-100 border border-gray-200 relative group">
@@ -529,18 +527,18 @@ export default function EducationDetails({
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                         </svg>
                       </div>
-                      <p className="text-sm font-medium text-gray-800">
+                      <p className="text-sm font-medium text-gray-800 text-center">
                         Upload Payment Receipt
                       </p>
-                      <p className="mt-1 text-xs text-gray-500">
+                      <p className="mt-1 text-xs text-gray-500 text-center">
                         Drag and drop your receipt, or click to browse
                       </p>
                     </>
                   )}
                 </div>
 
-                <div className="flex items-center text-xs text-gray-500 bg-yellow-50 p-2 rounded-md border border-yellow-100">
-                  <svg className="flex-shrink-0 mr-1.5 h-4 w-4 text-yellow-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="flex items-start md:items-center text-xs text-gray-500 bg-yellow-50 p-2 rounded-md border border-yellow-100">
+                  <svg className="flex-shrink-0 mr-1.5 h-4 w-4 text-yellow-500 mt-0.5 md:mt-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <p>
