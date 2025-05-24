@@ -352,18 +352,18 @@ export default function HallTicket({ uniqueId }: Props) {
             {/* Signatures */}
             <div className="mt-8 flex justify-between">
               <div>
-                <div className="border-b-2 border-black w-48 h-16"></div>
+                <div className=" w-48 h-16"></div>
                 <p className="mt-1 text-xs text-gray-600">Principal/Mudaris Signature</p>
               </div>
               <div>
-                <div className="border-b-2 border-black w-48 h-16"></div>
+                <div className=" w-48 h-16"></div>
                 <p className="mt-1 text-xs text-gray-600">SKSSF Unit Secretary Signature</p>
               </div>
             </div>
           </div>
 
           {/* Footer */}
-          <div className="bg-gray-100 p-4 border-t-2 border-black mt-4">
+          <div className=" p-4 border-t-2 border-black mt-4">
             <div className="flex justify-between">
               <p className="text-xs font-medium text-gray-600">REF: AI/EEP/2025/{hallTicket?.uniqueId}</p>
               <p className="text-xs font-medium text-gray-600">This hall ticket is issued provisionally</p>
