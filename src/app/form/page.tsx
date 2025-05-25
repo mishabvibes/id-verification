@@ -128,7 +128,7 @@ export default function FormPage() {
        <div className="container mx-auto px-4 py-8">
   <div className="max-w-3xl mx-auto text-center space-y-4">
     <h1 className="text-2xl sm:text-3xl font-bold text-white">
-      SKSSF TWALABA WING Entrance Exam Application Form
+      SKSSF TWALABA WING Final Exam Application Form
     </h1>
     <p className="text-blue-100 text-base max-w-xl mx-auto">
       Fill out your application for the entrance exam in just a few easy steps.
