@@ -269,7 +269,7 @@ export default function HallTicket({ uniqueId }: Props) {
             <div className="text-center">
               <h1 className="text-2xl font-bold tracking-wider text-gray-900 uppercase">SKSSF TWALABA WING MALAPPURAM EAST</h1>
               <div className="mt-5">
-                <h2 className="text-xl font-bold tracking-wider text-gray-900 uppercase">ENTRANCE EXAMINATION HALL TICKET</h2>
+                <h2 className="text-xl font-bold tracking-wider text-gray-900 uppercase">FINAL EXAMINATION HALL TICKET</h2>
               </div>
             </div>
           </div>
@@ -280,11 +280,11 @@ export default function HallTicket({ uniqueId }: Props) {
             <div className="mb-6 grid grid-cols-2 gap-4 border-b border-gray-200 pb-4">
               <div>
                 <p className="text-xs font-medium text-gray-500">Academic Year</p>
-                <p className="text-base font-bold">2025-2026</p>
+                <p className="text-base font-bold">2024-2025</p>
               </div>
               <div className="text-right">
                 <p className="text-xs font-medium text-gray-500">Examination Date</p>
-                <p className="text-base font-bold">05-10-2025 (10:00 AM - 01:00 PM)</p>
+                <p className="text-base font-bold">04-06-2025 (02:00 PM - 06:00 PM)</p>
               </div>
             </div>
 
